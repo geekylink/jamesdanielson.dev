@@ -1,4 +1,4 @@
-This is the code for https://jamesdanielson.com
+This is the code for https://jamesdanielson.dev
 
 This site is static build of a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -26,7 +26,7 @@ npm run build
 
 Serve the files found in the `/out/*` folder.
 
-**Note:** To run static builds of [Next.js](https://nextjs.org/) the '[package.json](https://github.com/geekylink/jamesdanielson.com/blob/main/package.json)' build line must inclue 'next export' like so:
+**Note:** To run static builds of [Next.js](https://nextjs.org/) the '[package.json](https://github.com/geekylink/jamesdanielson.dev/blob/main/package.json)' build line must inclue 'next export' like so:
 
 ```
 "build": "next build && next export",
@@ -34,4 +34,4 @@ Serve the files found in the `/out/*` folder.
 
 Certain functionality is not supported with static sites. Check out the [documentation](https://nextjs.org/docs/advanced-features/static-html-export) for details.
 
-Image optimization was disabled in '[next.config.js](https://github.com/geekylink/jamesdanielson.com/blob/main/next.config.js)' for this reason as well.
+Image optimization was disabled in '[next.config.js](https://github.com/geekylink/jamesdanielson.dev/blob/main/next.config.js)' for this reason as well.

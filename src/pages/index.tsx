@@ -32,7 +32,7 @@ export default function Home() {
         <div className={styles.textsection}>
           <p className={styles.text}>
 		        James Danielson Development - I am a software developer with over
-            ten years of experience. I've worked in a wide variety of fields 
+            ten years of experience. I&apos;ve worked in a wide variety of fields 
             from fintech to cyber security, and I like to make games sometimes. 
           </p>
         </div>
