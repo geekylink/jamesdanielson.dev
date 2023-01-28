@@ -7,11 +7,12 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
 export default function Home() {
   return (
     <>
       <Head>
-        <title>James Danielson - Home</title>
+        <title>James Danielson Development</title>
         <meta name="description" content="James Danielson" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -31,9 +32,33 @@ export default function Home() {
 
         <div className={styles.textsection}>
           <p className={styles.text}>
-		        James Danielson Development - I am a software developer with over
-            ten years of experience. I&apos;ve worked in a wide variety of fields 
-            from fintech to cyber security, and I like to make games sometimes. 
+		        A software developer with over ten years of experience. 
+            I&apos;ve worked in a wide variety of fields from fintech to cyber
+            security, and I like to make games sometimes.
+          </p>
+        </div>
+
+        <div className={styles.textsection}>
+          <p className={styles.text}>
+            You can find more content on my&nbsp;
+            <Link
+            href="https://jamesdanielson.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Portfolio
+          </Link>.
+          </p>
+        </div>
+
+        <div className={styles.textsection}>
+          <p className={styles.text}>
+		        Feel free to reach out to me on&nbsp;
+            <Link
+              href="https://www.linkedin.com/in/james-danielson-33aba264/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >LinkedIn</Link>.
           </p>
         </div>
 
