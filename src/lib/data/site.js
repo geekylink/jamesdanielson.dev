@@ -4,14 +4,14 @@
 export const links = {
   github: 'https://github.com/geekylink',
   oldGithub: 'https://github.com/Gekinzuku',
-  siteRepo: 'https://github.com/geekylink/jamesdanielson.com',
+  siteRepo: 'https://github.com/geekylink/jamesdanielson.dev',
   linkedin: 'https://www.linkedin.com/in/james-danielson-33aba264/',
   youtube: 'https://www.youtube.com/geekylink'
 };
 
 export const site = {
   name: 'James Danielson',
-  tagline: 'Software developer',
+  tagline: 'Senior Software Developer | Network & Security Architect',
   description:
     'Portfolio of James Danielson, a software developer with over ten years of experience in fields from fintech to cyber security.',
   url: 'https://jamesdanielson.com',
@@ -36,23 +36,22 @@ export const site = {
   // Typed out on the home page. kind: 'cmd' is typed character by character, 'out' appears as a line.
   boot: [
     { kind: 'cmd', text: 'whoami' },
-    { kind: 'out', text: 'james danielson, software developer' },
+    { kind: 'out', text: 'james danielson, senior software developer, network & security architect' },
     { kind: 'cmd', text: 'experience --years' },
     { kind: 'out', text: 'over 10' },
     { kind: 'cmd', text: 'fields --list' },
     { kind: 'out', text: 'fintech, cyber security, devops, games' },
     { kind: 'cmd', text: 'education' },
-    { kind: 'out', text: 'computer science, university of michigan' }
+    { kind: 'out', text: 'Computer Science, University of Michigan' }
   ],
 
   // The "Player 1" card on the home page.
   stats: [
     { label: 'Experience', value: 'Over 10 years' },
     { label: 'Specialties', value: 'Fintech, cyber security, devops, games' },
-    { label: 'Top language', value: 'Python' },
-    { label: 'Degree', value: 'Computer Science, University of Michigan' },
-    { label: 'Lived on', value: '3 continents' },
-    { label: 'Visited', value: '20+ countries' }
+    { label: 'Programming', value: 'Python, Go, Javascript, more' },
+    { label: 'Languages', value: 'English (Native), Spanish (Proficient), Mandarin Chinese (Conversational)' },
+    { label: 'Degree', value: 'Computer Science, University of Michigan, 3.5 GPA' },
   ],
 
   // The home page main menu. Use `external: true` for links that should open in a new tab.
@@ -68,7 +67,7 @@ export const site = {
       href: links.oldGithub,
       external: true
     },
-    { title: "This site's git", description: 'View the code for jamesdanielson.com.', href: links.siteRepo, external: true },
+    { title: "This site's git", description: 'View the code for jamesdanielson.dev', href: links.siteRepo, external: true },
     { title: 'LinkedIn', description: 'Want to reach out? Send me a message on LinkedIn.', href: links.linkedin, external: true }
   ]
 

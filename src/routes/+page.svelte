@@ -32,7 +32,7 @@
       <span class="last">{rest.join(' ')}</span>
     </h1>
     <p class="tagline">{site.tagline}</p>
-    <Window title="boot.log">
+    <Window title="jamesdanielson@dev:~$">
       <BootSequence lines={site.boot} />
     </Window>
   </div>
