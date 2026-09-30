@@ -1,0 +1,126 @@
+/* Global styles, design tokens and small utilities. Component-specific styles live in each .svelte file. */
+
+:root {
+  /* Fonts (self-hosted through @fontsource, imported in +layout.svelte) */
+  --font-display: 'Press Start 2P', ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  --font-body: 'VT323', ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  /* Color roles. Each monitor theme below swaps these values. */
+  --bg: #120f24;          /* page */
+  --bg-deep: #0b091a;     /* hard shadows, terminal wells */
+  --panel: #1a1636;       /* window bodies */
+  --panel-2: #231d47;     /* hover / selected rows */
+  --line: #3b3380;        /* borders and window title bars */
+  --text: #d8f5e4;        /* body text */
+  --muted: #9aa6c4;       /* secondary text */
+  --accent: #6dffb0;      /* the phosphor color: prompt, buttons, current page */
+  --hot: #ff4fa3;         /* selection and focus */
+  --warn: #ffc547;        /* dates and roles */
+  --link: #4de1ff;        /* links */
+  --dot: rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme='amber'] {
+  --bg: #1a1208; --bg-deep: #100b04; --panel: #241a0c; --panel-2: #33240f; --line: #5e411a;
+  --text: #ffe9bf; --muted: #cfae74; --accent: #ffb000; --hot: #ff7a3d; --warn: #ffe28a; --link: #ffd166;
+  --dot: rgba(255, 200, 120, 0.06);
+}
+
+:root[data-theme='ice'] {
+  --bg: #0a1424; --bg-deep: #060d18; --panel: #10203a; --panel-2: #172c4d; --line: #2f5594;
+  --text: #e3f3ff; --muted: #92acce; --accent: #7ad7ff; --hot: #ff6fb5; --warn: #ffd27a; --link: #b79bff;
+  --dot: rgba(160, 210, 255, 0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 1rem; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  line-height: 1.35;
+}
+
+/* CRT scanlines + vignette. Purely visual, never intercepts clicks, can be turned off in the footer. */
+html[data-crt='on'] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background:
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse at center, transparent 62%, rgba(0, 0, 0, 0.32) 100%);
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.6; margin: 0; }
+h1 { font-size: clamp(1rem, 3.6vw, 1.5rem); }
+h2 { font-size: 0.8rem; }
+h3 { font-size: 0.78rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--link); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+a:hover { color: var(--hot); }
+
+:focus-visible { outline: 3px solid var(--hot); outline-offset: 3px; }
+
+img { max-width: 100%; height: auto; }
+
+.prose p { max-width: 68ch; }
+.prose p:last-child { margin-bottom: 0; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Buttons and link-buttons */
+.btn {
+  display: inline-block;
+  font: 0.65rem/1.5 var(--font-display);
+  padding: 0.85rem 1rem;
+  border: 3px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 4px 4px 0 var(--bg-deep);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent); color: var(--bg-deep); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--bg-deep); }
+
+/* Small labels */
+.chip {
+  display: inline-block;
+  padding: 0 0.5rem;
+  border: 2px solid currentColor;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+ul.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0.7rem 0 0; }
+ul.tags li { font-size: 1.1rem; line-height: 1.25; color: var(--muted); border: 2px solid var(--line); padding: 0.05rem 0.45rem; }
+
+@keyframes blink { to { visibility: hidden; } }
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.95em;
+  margin-left: 0.15em;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
