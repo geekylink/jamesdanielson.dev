@@ -51,8 +51,8 @@
     width: 4px;
     background: var(--line);
   }
-  .timeline li { position: relative; min-width: 0; }
-  .timeline li::before {
+  .timeline > li { position: relative; min-width: 0; }
+  .timeline > li::before {
     content: '';
     position: absolute;
     left: -2rem;
@@ -67,7 +67,7 @@
 
   @media (max-width: 520px) {
     .timeline { padding-left: 1.5rem; }
-    .timeline li::before { left: -1.5rem; }
+    .timeline > li::before { left: -1.5rem; }
     .timeline::before { left: 0.2rem; }
   }
 </style>
